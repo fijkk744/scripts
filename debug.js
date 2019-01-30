@@ -1,6 +1,7 @@
 "use strict";
 class InputError extends Error {
   constructor(msg) {
+    super();
     this.name = "InputError";
     this.message = msg || "";
   }
