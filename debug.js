@@ -1,9 +1,10 @@
 "use strict";
-const InputError = function(msg) {
-  this.name = "InputError";
-  if (msg) this.message = msg;
-};
-InputError.prototype = Error.prototype;
+class InputError extends Error {
+  constructor(msg) {
+    this.name = "InputError";
+    if (msg) this.message = msg;
+  }
+}
 const Debug = {
   check(obj, type) {
     if (obj === null || obj === void 0) throw new InputError("first argument is " + obj);
