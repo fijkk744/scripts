@@ -2,7 +2,7 @@
 class InputError extends Error {
   constructor(msg) {
     this.name = "InputError";
-    if (msg) this.message = msg;
+    this.message = msg || "";
   }
 }
 const Debug = {
