@@ -16,7 +16,7 @@ const Debug = {
       throw new InputError("expected " + type.name + ", got " + obj.constructor.name);
   },
   is(obj, type) {
-    if (obj === null || obj === void 0) return false;
+    if (obj === null || obj === void 0 || typeof type != "function") return false;
     return obj instanceof type || typeof obj == type.name.toLowerCase();
   }
 };
