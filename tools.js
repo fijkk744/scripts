@@ -36,6 +36,9 @@ const Rand = {
 			throw new InputError("not enough values");
 		return a[this.int(a.length)];
 	},
+	sign() {
+		return (-1) ** this.int();
+	}.
 	int(min, max) {
 		if (min === void 0) min = 2;
 		else Debug.check(min, Number);
