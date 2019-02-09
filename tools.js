@@ -7,7 +7,9 @@ class InputError extends Error {
   }
 }
 const Debug = {
+  pass: false,	
   check(obj, type) {
+    if (this.pass) return;
     if (obj === null || obj === void 0)
       throw new InputError("first argument is " + obj);
     if (!this.is(type, Function))
@@ -16,6 +18,7 @@ const Debug = {
       throw new InputError("expected " + type.name + ", got " + obj.constructor.name);
   },
   multicheck() {
+    if (this.pass) return;
     let a = arguments;
     if (a.length < 2)
       throw new InputError("not enough arguments");
